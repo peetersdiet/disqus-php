@@ -77,12 +77,6 @@ class DisqusResource {
         }
         $kwargs = (array)$args[0];
 
-        foreach ((array)$resource->required as $k) {
-            if (empty($kwargs[$k])) {
-                throw new Exception('Missing required argument: '.$k);
-            }
-        }
-
         $api = $this->api;
 
         if (empty($kwargs['api_secret'])) {
